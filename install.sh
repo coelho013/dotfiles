@@ -72,6 +72,13 @@ for pkg in "${PACKAGES[@]}"; do
   stow --dir "$DOTFILES" --target "$HOME" --restow "$pkg"
 done
 
+# ── tmux plugins (tpm) ───────────────────────────────────
+# Os plugins não são versionados; o tpm instala o resto com prefix + I.
+if [[ ! -d $HOME/.tmux/plugins/tpm ]]; then
+  echo "==> Clonando tpm"
+  git clone --depth 1 https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
+fi
+
 # ── ai-memory ────────────────────────────────────────────
 "$DOTFILES/ai-memory/install.sh"
 

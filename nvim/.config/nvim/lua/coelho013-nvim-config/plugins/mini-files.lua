@@ -15,7 +15,7 @@ return {
       function()
         require('mini.files').open()
       end,
-      desc = 'Open mini.files'
+      desc = 'Open Explorer'
     },
   },
 }

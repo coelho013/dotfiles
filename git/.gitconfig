@@ -1,3 +1,7 @@
 [user]
 	email = coelhoramos.gabriel@gmail.com
 	name = coelho013
+
+# Configurações locais da máquina (fora do dotfiles)
+[include]
+	path = ~/.gitconfig.local

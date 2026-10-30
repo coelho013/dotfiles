@@ -102,3 +102,14 @@ if [[ -n $HOMEBREW_PREFIX ]]; then
 
   unset _zsh_autosuggest _zsh_highlight
 fi
+
+# ── kiro-cli ai-jail ─────
+
+kiro-cli-jail() {
+	 ai-jail --allow-host kiro.dev --allow-host amazonaws.com -- kiro-cli --v3
+}
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
