@@ -115,6 +115,12 @@ stow -d ~/.dotfiles -t ~ -R nvim
 # remove a package's links
 stow -d ~/.dotfiles -t ~ -D tmux
 
+# (re)link all packages (ai-memory is not a stow package)
+stow -d ~/.dotfiles -t ~ -R zsh git tmux nvim
+
+# dry run: show what stow would do without changing anything
+stow -n -v -d ~/.dotfiles -t ~ -R zsh git tmux nvim
+
 # update the Brewfile with what is currently installed
 brew bundle dump --file ~/.dotfiles/Brewfile --force --brews --taps
 
