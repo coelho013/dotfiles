@@ -73,11 +73,14 @@ for pkg in "${PACKAGES[@]}"; do
 done
 
 # ── tmux plugins (tpm) ───────────────────────────────────
-# Os plugins não são versionados; o tpm instala o resto com prefix + I.
+# Os plugins não são versionados: clona o tpm e já instala os plugins do
+# .tmux.conf (equivalente a prefix + I), senão a statusbar não aparece.
 if [[ ! -d $HOME/.tmux/plugins/tpm ]]; then
   echo "==> Clonando tpm"
   git clone --depth 1 https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 fi
+echo "==> Instalando plugins do tmux"
+"$HOME/.tmux/plugins/tpm/bin/install_plugins"
 
 # ── ai-memory ────────────────────────────────────────────
 "$DOTFILES/ai-memory/install.sh"

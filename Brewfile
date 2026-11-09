@@ -9,6 +9,7 @@ brew "stow"                       # gerencia os symlinks dos pacotes
 # ── Editor / terminal ────────────────────────────────────
 brew "neovim"
 brew "tmux"
+brew "bash"                       # tmux2k (statusbar) exige bash 5.2+; o do macOS é 3.2
 brew "lazygit"
 brew "node"
 brew "tree-sitter-cli"

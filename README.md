@@ -63,7 +63,11 @@ zsh                                      no framework
 ├── git                                  prompt reads `git status`
 └── Nerd Font                            prompt git icon (cask on macOS)
 
-tmux                                     prefix C-Space, no plugins
+tmux                                     prefix C-Space
+├── tpm                                  plugin manager (install.sh installs plugins)
+└── tmux2k                               statusbar
+    ├── bash 5.2+                        brew (macOS ships 3.2)
+    └── Nerd Font                        status icons
 
 git                                      .gitconfig with user/email
 
