@@ -28,5 +28,5 @@ brew "unzip"
 
 # ── Fontes ───────────────────────────────────────────────
 # Nerd Font para o ícone de git do prompt. Casks só existem no macOS;
-# no WSL a fonte é instalada no Windows (veja o README).
+# no Linux o install.sh baixa a fonte; no WSL ela é instalada no Windows (veja o README).
 cask "font-jetbrains-mono-nerd-font" if OS.mac?
