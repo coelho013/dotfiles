@@ -39,8 +39,10 @@ No system Ruby is needed: Homebrew ships its own Ruby to read the Brewfile.
 
 ### Nerd Font
 
-The zsh prompt uses a Nerd Font icon for the git branch. On macOS the
-Brewfile installs JetBrains Mono Nerd Font. On WSL the font must be installed
+The zsh prompt and the tmux2k statusbar use Nerd Font icons. On macOS the
+Brewfile installs JetBrains Mono Nerd Font. On Linux (Ubuntu) `install.sh`
+downloads it to `~/.local/share/fonts`; select it in your terminal's
+preferences afterwards. On WSL the font must be installed
 on Windows (download from <https://www.nerdfonts.com/font-downloads>) and
 selected in the Windows Terminal profile; otherwise set `GIT_SYMBOL=''` in
 `.zshrc`.
@@ -52,7 +54,8 @@ there so their parent works.
 
 ```
 BOOTSTRAP (install.sh)
-├── apt: build-essential, zsh, git       Linux (macOS: Command Line Tools)
+├── apt: build-essential, zsh, git,      Linux (macOS: Command Line Tools)
+│        curl, unzip, fontconfig         Nerd Font download
 ├── Homebrew                             installs the Brewfile
 │   └── curl                             downloads the installer
 └── stow                                 symlinks the packages
@@ -61,7 +64,7 @@ zsh                                      no framework
 ├── zsh-autosuggestions                  brew
 ├── zsh-syntax-highlighting              brew
 ├── git                                  prompt reads `git status`
-└── Nerd Font                            prompt git icon (cask on macOS)
+└── Nerd Font                            prompt git icon (cask on macOS, install.sh on Linux)
 
 tmux                                     prefix C-Space
 ├── tpm                                  plugin manager (install.sh installs plugins)
